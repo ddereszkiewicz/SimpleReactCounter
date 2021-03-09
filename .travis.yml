@@ -9,6 +9,6 @@ services:
 before_install:
   - docker build -t dawidde/express_app .
   - docker build -f DockerfileDev -t dawidde/express_app_dev .
-  - docker run -d -p 3000:80 dawidde/express_app
+  - docker run -d -p 80:80 dawidde/express_app
   - docker run -d -p  3000:3000 dawidde/express_app_dev
 
