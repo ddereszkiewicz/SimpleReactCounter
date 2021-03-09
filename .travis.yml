@@ -1,0 +1,14 @@
+language: node_js
+
+node_js:
+  - 12
+
+services:
+  - docker
+
+before_install:
+  - docker build -t dawidde/express_app .
+  - docker build -f DockerfileDev -t dawidde/express_app_dev .
+  - docker run -d -p 3000:80 dawidde/express_app
+  - docker run -d -p  3000:3000 dawidde/express_app_dev
+
