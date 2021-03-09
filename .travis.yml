@@ -7,8 +7,8 @@ services:
   - docker
 
 before_install:
-  - docker container prune
-  - docker image prune
+  - docker container prune -f
+  - docker image prune -f
   - docker build -f DockerfileDev -t dawidde/react_redux_app_dev .
   - docker build -t dawidde/react_redux_app .
   - docker run -d -p 80:80 dawidde/react_redux_app
